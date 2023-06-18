@@ -3,7 +3,7 @@ name: Build Container Image
 on:
   workflow_dispatch:
     inputs:
-      outine-version:
+      outline-version:
         description: 'Outline version to use to build the image, e.g: 0.69.1'
         required: true
         default: '0.69.1'
