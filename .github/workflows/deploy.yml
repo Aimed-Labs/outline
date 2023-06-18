@@ -9,14 +9,14 @@ on:
         default: '0.69.1'
 
 jobs:
-  nginx:
+  build-outline-image:
     runs-on: ubuntu-latest
     env:
-      PAT: ${{ secrets.SHAKTIMAN_PAT }}
+      PAT : ${{ secrets.SHAKTIMAN_PAT }}
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ inputs.outline-version }}
+          ref: 'v${{ inputs.outline-version }}'
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
