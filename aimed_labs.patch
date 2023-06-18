@@ -1,0 +1,26 @@
+diff --git a/server/env.ts b/server/env.ts
+index 5b9ade57d..02dd0d37c 100644
+--- a/server/env.ts
++++ b/server/env.ts
+@@ -578,7 +578,7 @@ export class Environment {
+   /**
+    * The product name
+    */
+-  public APP_NAME = "Outline";
++  public APP_NAME = "Aimed Labs' Docs";
+ 
+   /**
+    * Returns true if the current installation is the cloud hosted version at
+diff --git a/server/routes/app.ts b/server/routes/app.ts
+index 9596766ee..a75fdebf8 100644
+--- a/server/routes/app.ts
++++ b/server/routes/app.ts
+@@ -55,7 +55,7 @@ export const renderApp = async (
+ ) => {
+   const {
+     title = env.APP_NAME,
+-    description = "A modern team knowledge base for your internal documentation, product specs, support answers, meeting notes, onboarding, &amp; more…",
++    description = "Aimed Labs - Mission success with focus on all 5 tech impact areas",
+     canonical = "",
+     shortcutIcon = `${env.CDN_URL || ""}/images/favicon-32.png`,
+   } = options;
