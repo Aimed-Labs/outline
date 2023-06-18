@@ -7,6 +7,10 @@ on:
         description: 'Outline version to use to build the image, e.g: 0.69.1'
         required: true
         default: '0.69.1'
+      patch-file-url:
+        description: 'This patch will be applied on the source code'
+        required: true
+        default: 'https://raw.githubusercontent.com/Aimed-Labs/outline/main/aimed_labs.patch'
 
 jobs:
   build-outline-image:
@@ -19,7 +23,7 @@ jobs:
           ref: 'v${{ inputs.outline-version }}'
       - name: Apply aimed_labs.patch
         run: |
-          git show main:aimed_labs.patch > aimed_labs.patch
+          wget -c '${{ inputs.patch-file-url}}' -O aimed_labs.patch
           git apply aimed_labs.patch
 
       - name: Login to GitHub Container Registry
