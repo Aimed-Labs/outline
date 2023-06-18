@@ -19,6 +19,7 @@ jobs:
           ref: 'v${{ inputs.outline-version }}'
       - name: Apply aimed_labs.patch
         run: |
+          git show main:aimed_labs.patch > aimed_labs.patch
           git apply aimed_labs.patch
 
       - name: Login to GitHub Container Registry
